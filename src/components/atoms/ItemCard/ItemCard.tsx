@@ -9,6 +9,7 @@ const ItemCard: React.FunctionComponent<CardProps> = ({
   unit,
   amount,
   price,
+  customFunction,
 }) => {
   return (
     <Button

@@ -26,7 +26,6 @@ const Ingredients = () => {
             id={item.id}
             title={item.title}
             unit={item.unit}
-            amount={undefined}
             price={item.price}
           />
         )}

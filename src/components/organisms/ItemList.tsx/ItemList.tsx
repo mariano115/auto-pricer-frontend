@@ -1,19 +1,7 @@
 import React from "react";
-import { FlatList, GestureResponderEvent } from "react-native";
-import ItemCard from "../../atoms/ItemCard/ItemCard";
-//import { ItemListProps } from "../../../utils/Types";
+import { FlatList } from "react-native";
+import { ItemListProps } from "../../../utils/Interfaces";
 import styles from "./styles";
-
-interface ItemListProps<T> {
-  list: T[];
-  onPress: () => void;
-  renderItemComponent: (item: T) => JSX.Element;
-}
-
-/* const ItemList: React.FunctionComponent<ItemListProps> = ({
-  list,
-  onPress,
-}) => { */
 
 const ItemList = <T,>({ list, renderItemComponent }: ItemListProps<T>) => {
   return (

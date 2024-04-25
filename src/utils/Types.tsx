@@ -3,9 +3,10 @@ import { GestureResponderEvent } from "react-native";
 export type CardProps = {
   id: number;
   title: string;
-  unit: string | undefined;
-  amount: number | undefined;
+  unit?: string;
+  amount?: number;
   price: number;
+  customFunction?: () => void;
 };
 
 export type CustomCardProps = {
