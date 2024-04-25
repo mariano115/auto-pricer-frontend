@@ -1,9 +1,8 @@
 import React from "react";
 import CardList from "../../components/organisms/CardList/CardList";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Button } from "react-native";
-import { RootStackParamList } from "../RootStackPrams";
 import { useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from "../../utils/Types";
 
 const cardListArray = [
   {
@@ -56,10 +55,7 @@ const cardListArray = [
   },
 ];
 
-type CommerceListScreenProps = StackNavigationProp<
-  RootStackParamList,
-  "CommerceList"
->;
+type CommerceListScreenProps = StackNavigationProp<RootStackParamList>;
 
 const CommerceList = () => {
   const navigation = useNavigation<CommerceListScreenProps>();

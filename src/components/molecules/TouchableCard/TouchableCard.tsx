@@ -1,33 +1,18 @@
-import { GestureResponderEvent, StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import CustomCard from "../../atoms/CustomCard/CustomCard";
-
-export type TouchableCardProps = {
-  image: string;
-  title: string;
-  onPress: (event: GestureResponderEvent) => void;
-};
+import { TouchableCardProps } from "../../../utils/Types";
+import styles from "./styles";
 
 const TouchableCard: React.FunctionComponent<TouchableCardProps> = ({
   image,
   title,
-  onPress
+  onPress,
 }) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={[styles.touchable]}
-    >
+    <TouchableOpacity onPress={onPress} style={[styles.touchable]}>
       <CustomCard image={image} title={title} />
     </TouchableOpacity>
   );
 };
-
-const styles = StyleSheet.create({
-    touchable: {
-    display: 'flex',
-    width: "100%",
-    borderRadius: 30
-  },
-});
 
 export default TouchableCard;

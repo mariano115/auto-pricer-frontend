@@ -1,40 +1,24 @@
-import {
-  GestureResponderEvent,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import CustomCard from "../../atoms/CustomCard/CustomCard";
+import * as reactNative from "react-native";
 import CustomButton from "../../atoms/CustomButton/CustomButton";
-
-export type TouchableButtonProps = {
-  leftIcon?: string;
-  title: string;
-  rightIcon?: string;
-  onPress: (event: GestureResponderEvent) => void;
-};
+import { TouchableButtonProps } from "../../../utils/Types";
+import styles from "./styles";
 
 const TouchableButton: React.FunctionComponent<TouchableButtonProps> = ({
-  leftIcon,
   title,
-  rightIcon,
+  icon,
+  typeIcon,
   onPress,
 }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.button}>
-      <CustomButton leftIcon={leftIcon} title={title} rightIcon={rightIcon}/>
-    </TouchableOpacity>
+    <reactNative.View style={styles.button}>
+      <CustomButton
+        title={title}
+        icon={icon}
+        typeIcon={typeIcon}
+        onPress={onPress}
+      />
+    </reactNative.View>
   );
 };
-
-const styles = StyleSheet.create({
-  button: {
-    justifyContent: "center",
-    alignItems: "center",
-    alignContent: "center",
-    backgroundColor: "#DDDDDD",
-    borderRadius: 20,
-  },
-});
 
 export default TouchableButton;

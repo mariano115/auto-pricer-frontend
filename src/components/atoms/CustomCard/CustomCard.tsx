@@ -1,52 +1,34 @@
 import React from "react";
 //import "./styles.scss";
 import { Card, Text } from "@rneui/themed";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image } from "react-native";
+import { CustomCardProps } from "../../../utils/Types";
+import styles from "./styles";
 
-export type CardProps = {
-  image: string;
-  title: string;
-};
-
-const CustomCard: React.FunctionComponent<CardProps> = ({ image, title }) => {
+const CustomCard: React.FunctionComponent<CustomCardProps> = ({
+  image,
+  title,
+}) => {
   return (
-    <Card>
-      <View style={styles.card}>
-        <View style={styles.imageContainer}>
-        <Image
-          style={styles.imageCard}
-          resizeMode="cover"
-          source={{ uri: image }}
-        />
+    <Card containerStyle={styles.cardContainer}>
+      <View
+        style={[styles.card, image ? styles.spaceBetween : styles.flexStart]}
+      >
+        <View>
+          {image && (
+            <Image
+              style={styles.imageCard}
+              resizeMode="cover"
+              source={{ uri: image }}
+            />
+          )}
         </View>
-        <View style={styles.titleContainer}>
+        <View>
           <Text style={styles.title}>{title}</Text>
         </View>
       </View>
     </Card>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: "row",
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
-  titleContainer:{
-    /* backgroundColor:'green' */
-  },
-  title: {
-    fontSize: 25,
-    paddingRight: '20%'
-  },
-  imageContainer:{
-    /* backgroundColor: 'yellow' */
-  },
-  imageCard: {
-    width: 100,
-    height: 100,
-  },
-});
 
 export default CustomCard;
