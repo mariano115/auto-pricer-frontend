@@ -9,7 +9,7 @@ const ItemCard: React.FunctionComponent<CardProps> = ({
   unit,
   amount,
   price,
-  customFunction,
+  customRender,
 }) => {
   return (
     <Button
@@ -24,6 +24,7 @@ const ItemCard: React.FunctionComponent<CardProps> = ({
         <Text style={[styles.amountText, styles.size_19]}>{amount}</Text>
       )}
       <Text style={[styles.priceText, styles.size_19]}>$ {price}</Text>
+      {customRender && customRender}
     </Button>
   );
 };

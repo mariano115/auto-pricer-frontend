@@ -5,6 +5,7 @@ import { RootStackParamList } from "../../utils/Types";
 import ItemList from "../../components/organisms/ItemList.tsx/ItemList";
 import styles from "./styles";
 import ItemCard from "../../components/atoms/ItemCard/ItemCard";
+import SmallButton from "../../components/atoms/SmallButton/SmallButton";
 
 type TotalPriceListScreenProps = StackNavigationProp<RootStackParamList>;
 const itemsListMock = [
@@ -25,9 +26,18 @@ const TotalPriceList = () => {
           <ItemCard
             id={item.id}
             title={item.title}
-            unit={undefined}
-            amount={undefined}
             price={item.price}
+            customRender={
+              <SmallButton
+                icon={{
+                  name: "edit",
+                  type: "material-icons",
+                  color: "white",
+                  size: 30,
+                }}
+                onPress={() => {}}
+              />
+            }
           />
         )}
       />

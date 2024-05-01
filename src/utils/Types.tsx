@@ -6,7 +6,7 @@ export type CardProps = {
   unit?: string;
   amount?: number;
   price: number;
-  customFunction?: () => void;
+  customRender?: JSX.Element;
 };
 
 export type CustomCardProps = {
@@ -33,10 +33,15 @@ export type TouchableButtonProps = {
 };
 
 export type CustomButtonProps = {
-  title: string;
-  icon: string;
-  typeIcon: string;
-  onPress: (event: GestureResponderEvent) => void;
+  title?: string;
+  icon?: string;
+  typeIcon?: string;
+  onPress?: (event: GestureResponderEvent) => void;
+};
+
+export type SmallButtonProps = {
+  icon?: IconProps;
+  onPress?: (event: GestureResponderEvent) => void;
 };
 
 export type ItemListProps = {
@@ -57,4 +62,11 @@ export type RootStackParamList = {
   TotalPriceList: undefined;
   Preparations: undefined;
   PreparationIngredients: undefined;
+};
+
+export type IconProps = {
+  name: string;
+  type: string;
+  size: number;
+  color: string;
 };
